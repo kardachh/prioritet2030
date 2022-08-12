@@ -609,6 +609,30 @@ video {
   z-index: 50;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.col-start-1 {
+  grid-column-start: 1;
+}
+
+.col-start-2 {
+  grid-column-start: 2;
+}
+
+.row-\[span_8_\/_span_8\] {
+  grid-row: span 8 / span 8;
+}
+
+.row-start-1 {
+  grid-row-start: 1;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -617,6 +641,11 @@ video {
 .mx-\[135px\] {
   margin-left: 135px;
   margin-right: 135px;
+}
+
+.my-\[40px\] {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .mr-\[17px\] {
@@ -667,6 +696,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-\[70px\] {
   height: 70px;
 }
@@ -679,6 +712,10 @@ video {
   height: 600px;
 }
 
+.min-h-\[500px\] {
+  min-height: 500px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -689,6 +726,10 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.list-inside {
+  list-style-position: inside;
 }
 
 .list-disc {
@@ -727,12 +768,34 @@ video {
   gap: 30px;
 }
 
+.gap-0 {
+  gap: 0px;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
 
 .rounded-2xl {
   border-radius: 1rem;
+}
+
+.rounded-l-2xl {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
+.rounded-l-xl {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+.rounded-tl-xl {
+  border-top-left-radius: 0.75rem;
 }
 
 .border {
@@ -743,9 +806,31 @@ video {
   border-width: 2px;
 }
 
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.border-r-2 {
+  border-right-width: 2px;
+}
+
+.border-b {
+  border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
 .border-\[\#FAFBFC\] {
   --tw-border-opacity: 1;
   border-color: rgb(250 251 252 / var(--tw-border-opacity));
+}
+
+.border-\[\#7B89B6\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(123 137 182 / var(--tw-border-opacity));
 }
 
 .bg-white {
@@ -844,6 +929,22 @@ video {
 
 .marker\:text-\[\#E70029\]::marker {
   color: rgb(231 0 41 );
+}
+
+.first\:rounded-tl-xl:first-child {
+  border-top-left-radius: 0.75rem;
+}
+
+.first\:rounded-tl-2xl:first-child {
+  border-top-left-radius: 1rem;
+}
+
+.last\:rounded-bl-xl:last-child {
+  border-bottom-left-radius: 0.75rem;
+}
+
+.last\:rounded-bl-2xl:last-child {
+  border-bottom-left-radius: 1rem;
 }
 
 .hover\:border:hover {
