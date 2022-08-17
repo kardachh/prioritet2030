@@ -11,21 +11,24 @@
 </head>
 <body style="font-family: Montserrat, ui-monospace;">
     <!-- top-menu -->
-    <div class="fixed top-0 px-[25px] lg:px-0 h-[70px] lg:h-[100px] w-full bg-white z-50 drop-shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
-        <div class="container mx-auto h-full flex justify-between items-center">
-            <div class="flex items-center">
+    <div id="top-menu-parent" class="fixed top-0 px-[25px] lg:px-0 h-[70px] lg:h-[100px] w-full bg-white z-50 drop-shadow-[0_4px_20px_rgba(0,0,0,0.15)]">
+        <div id="top-menu" class="container mx-auto h-full flex justify-between items-center">
+            <div id="logo" class="flex items-center">
                 <img src="assets/logo.svg" class="mr-[17px] h-[30px] lg:h-auto"/>
                 <div class="uppercase text-[#001C73] text-[14px] lg:text-[24px] font-[600]">приоритет <span class="text-[#E70029]">2030</span></div>
             </div>
-            <div class="hidden lg:flex justify-between items-center lg:w-1/2">
+            <div id="links" class="hidden lg:flex justify-between items-center lg:w-1/2">
                 <div><a class="text-[16px] text-[#001C73] font-[600]" href="#about">О проекте</a></div>
                 <div><a class="text-[16px] text-[#001C73] font-[600]" href="#foundation">Ценностные основы</a></div>
                 <div><a class="text-[16px] text-[#001C73] font-[600]" href="#blocks">Блоки</a></div>
                 <div><a class="text-[16px] text-[#001C73] font-[600]" href="#team">Команда</a></div>
                 <div><a class="text-[16px] text-[#001C73] font-[600]" href="#contacts">Контакты</a></div>
             </div>
-            <div class="lg:hidden">
+            <div id="open-menu" class="lg:hidden">
                 <img src="assets/burger.svg" class="cursor-pointer"/>
+            </div>
+            <div id="close-menu" class="hidden absolute top-[25px] right-[25px]">
+                <img src="assets/close.svg" class="cursor-pointer"/>
             </div>
         </div>
     </div>
@@ -122,12 +125,12 @@
             </div>
             <div class="bg-[#FAFBFC] py-[35px] px-[30px] rounded-2xl border border-[#7B89B6] lg:border-[#FAFBFC] hover:border-[#7B89B6] border-2 drop-shadow-[0_10px_20px_rgba(0,28,115,0.15)] lg:drop-shadow-none hover:drop-shadow-[0_10px_20px_rgba(0,28,115,0.15)]">
                 <div class="text-[#001C73] text-[16px] lg:text-[24px] text-center mb-[15px]">
-                    Истина
+                    Счастье
                 </div>
                 <div class="text-[12px] lg:text-[14px] text-[#EB3253] text-center mb-[25px]">
                     отношение человека
                     <br>
-                    к окружающему миру (Знание)
+                    к самому себе (Самоактуализация)
                 </div>
                 <div class="text-[12px] lg:text-[14px]">
                     включает в себя ценности:
@@ -266,6 +269,31 @@
             <div class="w-full my-[25px] lg:my-[50px] uppercase bg-[#001C73] text-white text-[12px] lg:text-[18px] font-[600] rounded-2xl p-3 text-center">отправить</div>
         </div>
     </div>
-
 </body>
 </html>
+<script>
+    const toggleMobileMenu = () => {
+        document.getElementById("top-menu-parent").classList.toggle("h-full")
+        document.getElementById("top-menu-parent").classList.toggle("px-[25px]")
+        document.getElementById("top-menu").classList.toggle("flex-col")
+        document.getElementById("top-menu").classList.toggle("items-center")
+        document.getElementById("top-menu").classList.toggle("items-start")
+        document.getElementById("top-menu").classList.toggle("justify-between")
+        document.getElementById("top-menu").classList.toggle("justify-start")
+        document.getElementById("logo").classList.toggle("w-full")
+        document.getElementById("logo").classList.toggle("px-[25px]")
+        document.getElementById("logo").classList.toggle("border-b-2")
+        document.getElementById("logo").classList.toggle("border-[#808DB9]")
+        document.getElementById("logo").classList.toggle("mb-[20px]")
+        document.getElementById("links").classList.toggle("px-[25px]")
+        document.getElementById("links").classList.toggle("hidden")
+        document.getElementById("links").classList.toggle("space-y-[25px]")
+        document.getElementById("logo").classList.toggle("h-[70px]")
+        document.getElementById("open-menu").classList.toggle("hidden")
+        document.getElementById("close-menu").classList.toggle("hidden")
+
+    }
+
+    document.getElementById("open-menu").addEventListener("click", toggleMobileMenu)
+    document.getElementById("close-menu").addEventListener("click", toggleMobileMenu)
+</script>
