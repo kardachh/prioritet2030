@@ -629,6 +629,10 @@ video {
   z-index: 50;
 }
 
+.order-first {
+  order: -9999;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
@@ -1053,6 +1057,14 @@ video {
   text-transform: uppercase;
 }
 
+.leading-\[30px\] {
+  line-height: 30px;
+}
+
+.leading-\[25px\] {
+  line-height: 25px;
+}
+
 .text-\[\#001C73\] {
   --tw-text-opacity: 1;
   color: rgb(0 28 115 / var(--tw-text-opacity));
@@ -1113,6 +1125,10 @@ video {
 
   .lg\:bottom-\[50px\] {
     bottom: 50px;
+  }
+
+  .lg\:order-last {
+    order: 9999;
   }
 
   .lg\:col-start-2 {
