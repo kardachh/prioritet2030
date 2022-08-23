@@ -296,26 +296,32 @@
 </body>
 </html>
 <script>
-    const toggleMobileMenu = () => {
-        document.getElementById("top-menu-parent").classList.toggle("h-full")
-        document.getElementById("top-menu-parent").classList.toggle("px-[25px]")
-        document.getElementById("top-menu").classList.toggle("flex-col")
-        document.getElementById("top-menu").classList.toggle("items-center")
-        document.getElementById("top-menu").classList.toggle("items-start")
-        document.getElementById("top-menu").classList.toggle("justify-between")
-        document.getElementById("top-menu").classList.toggle("justify-start")
-        document.getElementById("logo").classList.toggle("w-full")
-        document.getElementById("logo").classList.toggle("px-[25px]")
-        document.getElementById("logo").classList.toggle("border-b-2")
-        document.getElementById("logo").classList.toggle("border-[#808DB9]")
-        document.getElementById("logo").classList.toggle("mb-[20px]")
-        document.getElementById("links").classList.toggle("px-[25px]")
-        document.getElementById("links").classList.toggle("hidden")
-        document.getElementById("links").classList.toggle("space-y-[25px]")
-        document.getElementById("logo").classList.toggle("h-[70px]")
-        document.getElementById("open-menu").classList.toggle("hidden")
-        document.getElementById("close-menu").classList.toggle("hidden")
+    let mobileMenuIsOpen = false;
 
+    const toggleMobileMenu = () => {
+        if (document.documentElement.clientWidth < 1024){
+            document.getElementById("top-menu-parent").classList.toggle("h-full")
+            document.getElementById("top-menu-parent").classList.toggle("px-[25px]")
+            document.getElementById("top-menu").classList.toggle("flex-col")
+            document.getElementById("top-menu").classList.toggle("items-center")
+            document.getElementById("top-menu").classList.toggle("items-start")
+            document.getElementById("top-menu").classList.toggle("justify-between")
+            document.getElementById("top-menu").classList.toggle("justify-start")
+            document.getElementById("logo").classList.toggle("w-full")
+            document.getElementById("logo").classList.toggle("px-[25px]")
+            document.getElementById("logo").classList.toggle("border-b-2")
+            document.getElementById("logo").classList.toggle("border-[#808DB9]")
+            document.getElementById("logo").classList.toggle("mb-[20px]")
+            document.getElementById("links").classList.toggle("px-[25px]")
+            document.getElementById("links").classList.toggle("hidden")
+            document.getElementById("links").classList.toggle("space-y-[25px]")
+            document.getElementById("logo").classList.toggle("h-[70px]")
+            document.getElementById("open-menu").classList.toggle("hidden")
+            document.getElementById("close-menu").classList.toggle("hidden")
+            mobileMenuIsOpen = !mobileMenuIsOpen
+        }
+
+        console.log("toggleMobileMenu",mobileMenuIsOpen)
     }
 
     document.getElementById("open-menu").addEventListener("click", toggleMobileMenu)
@@ -357,6 +363,6 @@
         }
     }
     resizeBlock()
-    window.addEventListener('resize', resizeBlock);
 
+    Array.from(document.getElementById("links").children).forEach((link)=> link.addEventListener("click", toggleMobileMenu))
 </script>
