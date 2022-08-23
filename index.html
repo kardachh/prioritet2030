@@ -346,12 +346,12 @@
 
     const resizeBlock = () => {
         if (document.documentElement.clientWidth > 1024) {
-            for (let i=1; i<blocksSelect.length; i++){
+            for (let i=1; i<=blocksSelect.length; i++){
                 document.getElementById(`block-parent`).appendChild(document.getElementById(`block-id-${i}`))
             }
         }
         else {
-            for (let i=1; i<blocksSelect.length; i++){
+            for (let i=1; i<=blocksSelect.length; i++){
                 document.getElementById(`block-select-id-${i}`).parentElement.appendChild(document.getElementById(`block-id-${i}`))
             }
         }
